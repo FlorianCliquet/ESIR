@@ -12,11 +12,11 @@ This repository serves as a comprehensive collection of all the materials, proje
 ### What's Inside
 - **Course Materials**: Lecture notes, textbooks, and supplementary readings.
 - **Projects**: Code, reports, and presentations from various projects.
-- **Exams and Solutions**: Past exams and solutions for practice and review.
+- **Exams and Solutions**: Past exams and solutions for practice and review. (maybe)
 - **Guides and Tips**: Advice on navigating the ESIR program, study tips, and career guidance.
 - **Tools and Resources**: Software tools, libraries, and other resources that are beneficial for engineering students.
 
 ### Purpose
 The goal of this repository is to create a comprehensive and organized reference that will help ESIR students excel in their studies and prepare for their future careers. Whether you are just starting out or are in your final year, you'll find valuable information and tools that can aid in your academic and professional development.
 
-Feel free to explore, use, and contribute to this repository. Let's build a supportive community of learners and professionals!
+Feel free to explore, use, and contact me for any question about this repository.
