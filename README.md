@@ -8,6 +8,7 @@ Ce répertoire est une collection complète de tous les cours, projets et ressou
 - **ESIR 1** : Ressources de première année, y compris les cours, les projets et les documents de référence.
 - **ESIR 2** : Ressources de deuxième année, comprenant des cours avancés, des projets pratiques et des notes utiles.
 - **ESIR 3** : Ressources de troisième année, englobant des projets spécialisés, des travaux de thèse et des contenus de préparation professionnelle.
+- **OTHERS** : Ressources supplémentaires , prenant en compte des langages de programmation et/ou domaines d'informatique non vu à L'ESIR.
 
 ### Contenu
 - **Contenu de Cours** : Notes de cours, manuels et lectures complémentaires.
