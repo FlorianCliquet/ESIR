@@ -2,15 +2,15 @@
 
 Bonjour, je suis Florian Cliquet, un futur étudiant dans le programme ESIR Info. En mai 2024, je suis actuellement en CUPGE2, et l'année prochaine, je commencerai ESIR 1. Par conséquent, les données pour ESIR 2 et 3 prendront un certain temps à être pleinement développées et utiles.
 
-Ce répertoire est une collection complète de tous les matériaux, projets et ressources que j'ai utilisés et créés au cours de mes études en ingénierie. Il est conçu pour être une ressource précieuse pour les étudiants actuels et futurs de l'ESIR. Le répertoire est organisé en trois dossiers principaux, correspondant à chaque année du programme ESIR :
+Ce répertoire est une collection complète de tous les cours, projets et ressources que j'ai utilisés et créés au cours de mes études en ingénierie. Il est conçu pour être une ressource précieuse pour les étudiants actuels et futurs de l'ESIR. Le répertoire est organisé en trois dossiers principaux, correspondant à chaque année du programme ESIR :
 
 ### Structure des Dossiers
 - **ESIR 1** : Ressources de première année, y compris les cours, les projets et les documents de référence.
 - **ESIR 2** : Ressources de deuxième année, comprenant des cours avancés, des projets pratiques et des notes utiles.
-- **ESIR 3** : Ressources de troisième année, englobant des projets spécialisés, des travaux de thèse et des matériaux de préparation professionnelle.
+- **ESIR 3** : Ressources de troisième année, englobant des projets spécialisés, des travaux de thèse et des contenus de préparation professionnelle.
 
 ### Contenu
-- **Matériaux de Cours** : Notes de cours, manuels et lectures complémentaires.
+- **Contenu de Cours** : Notes de cours, manuels et lectures complémentaires.
 - **Projets** : Code, rapports et présentations de divers projets.
 - **Examens et Solutions** : Examens passés et solutions pour la pratique et la révision.
 - **Guides et Conseils** : Conseils pour naviguer dans le programme ESIR, astuces d'étude et orientation professionnelle.
