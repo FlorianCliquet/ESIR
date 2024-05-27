@@ -1,4 +1,27 @@
-# Welcome to My Engineering Cursus Repository
+# Bienvenue dans Mon Répertoire de Cursus d'Ingénierie Logiciel [FR]
+
+Bonjour, je suis Florian Cliquet, un futur étudiant dans le programme ESIR Info. En mai 2024, je suis actuellement en CUPGE2, et l'année prochaine, je commencerai ESIR 1. Par conséquent, les données pour ESIR 2 et 3 prendront un certain temps à être pleinement développées et utiles.
+
+Ce répertoire est une collection complète de tous les matériaux, projets et ressources que j'ai utilisés et créés au cours de mes études en ingénierie. Il est conçu pour être une ressource précieuse pour les étudiants actuels et futurs de l'ESIR. Le répertoire est organisé en trois dossiers principaux, correspondant à chaque année du programme ESIR :
+
+### Structure des Dossiers
+- **ESIR 1** : Ressources de première année, y compris les cours, les projets et les documents de référence.
+- **ESIR 2** : Ressources de deuxième année, comprenant des cours avancés, des projets pratiques et des notes utiles.
+- **ESIR 3** : Ressources de troisième année, englobant des projets spécialisés, des travaux de thèse et des matériaux de préparation professionnelle.
+
+### Contenu
+- **Matériaux de Cours** : Notes de cours, manuels et lectures complémentaires.
+- **Projets** : Code, rapports et présentations de divers projets.
+- **Examens et Solutions** : Examens passés et solutions pour la pratique et la révision.
+- **Guides et Conseils** : Conseils pour naviguer dans le programme ESIR, astuces d'étude et orientation professionnelle.
+- **Outils et Ressources** : Outils logiciels, bibliothèques et autres ressources bénéfiques pour les étudiants en ingénierie.
+
+### Objectif
+L'objectif de ce répertoire est de créer une référence complète et organisée qui aidera les étudiants de l'ESIR à exceller dans leurs études et à se préparer pour leur future carrière. Que vous soyez débutant ou en dernière année, vous trouverez des informations et des outils précieux qui peuvent vous aider dans votre développement académique et professionnel.
+
+N'hésitez pas à explorer, utiliser et me contacter pour toute question concernant ce répertoire.
+
+# Welcome to My Software Engineering Cursus Repository [EN]
 
 Hello, I'm Florian Cliquet, a future student in the ESIR Info program. As of May 2024, I am currently in CUPGE2, and next year I'll be starting ESIR 1. Therefore, the data for ESIR 2 and 3 will take some time to be fully developed and valuable.
 
