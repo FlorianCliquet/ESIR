@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/florian/Documents/ESIR/ESIR1/SYS-S5/TPs/TP C/TP2_3_4",
-      "program": "/home/florian/Documents/ESIR/ESIR1/SYS-S5/TPs/TP C/TP2_3_4/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
