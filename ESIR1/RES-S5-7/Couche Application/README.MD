@@ -31,21 +31,21 @@
 - **Serveur** : En écoute sur un hôte avec une IP fixe, gère les demandes des clients. Utilise souvent des clusters de serveurs pour gérer la charge.
 
 **Schema: Modèle Client/Serveur**
-"""
+```
   [Client 1] --> |           |
   [Client 2] --> | Serveur   | --> Base de données
   [Client 3] --> |           |
-"""
+```
 
 ### b) Modèle Pair-à-pair (P2P)
 - **P2P** : Pas de serveur central, chaque terminal (peer) communique directement avec d’autres. Ce modèle est plus scalable (l’ajout de peers augmente la capacité), mais implique une gestion plus complexe des IP dynamiques.
 
 **Schema: Modèle P2P**
-"""
+```
 [Peer 1] <---> [Peer 2] <---> [Peer 3]
       |                |               |
     [Peer 4]         [Peer 5]         [Peer 6]
-"""
+```
 
 ---
 
@@ -54,9 +54,9 @@
 - Les sockets permettent de choisir des paramètres comme le protocole de transport (TCP ou UDP).
 
 **Schema: Communication via Sockets**
-"""
+```
   Processus (A) --- Socket --- Transport (TCP/UDP) --- Socket --- Processus (B)
-"""
+```
 
 ---
 
@@ -76,9 +76,9 @@
 - **Caractéristiques** : Utilise TCP, envoie des commandes ASCII et contrôle à distance des terminaux via une connexion TCP unique.
 
 **Schema: Telnet**
-"""
+```
   [Client] ---(TCP, Port 23)--- [Serveur Telnet]
-"""
+```
 
 ### b) SSH (Secure Shell)
 - **Fonction** : Alternative sécurisée à Telnet. SSH chiffre les communications pour une meilleure sécurité.
@@ -86,9 +86,9 @@
 - **Caractéristiques** : Utilise des techniques de chiffrement (ex : AES), permettant une communication sécurisée entre client et serveur.
 
 **Schema: SSH**
-"""
+```
   [Client] ---(Chiffré, Port 22)--- [Serveur SSH]
-"""
+```
 
 ### c) HTTP (Hypertext Transfer Protocol)
 - **Fonction** : Protocole client-serveur pour le transfert de pages web.
@@ -97,18 +97,17 @@
 - **Sans état** : Le serveur HTTP ne garde pas d'informations sur les requêtes précédentes.
   
 **Schema: HTTP Communication**
-"""
+```
   [Navigateur] -- Requête HTTP --> [Serveur Web]
   [Navigateur] <-- Réponse HTTP -- [Serveur Web]
-"""
+```
 
 **Modèle de Connexion HTTP (sans état)**
-"""
-  1. Client initie une connexion TCP (port 80)
-  2. Envoie une requête HTTP
-  3. Serveur envoie la réponse HTTP
-  4. La connexion TCP est fermée
-"""
+
+1. Client initie une connexion TCP (port 80)
+2. Envoie une requête HTTP
+3. Serveur envoie la réponse HTTP
+4. La connexion TCP est fermée
 
 ### d) FTP (File Transfer Protocol)
 - **Fonction** : Protocole client-serveur pour le transfert de fichiers.
@@ -116,11 +115,11 @@
 - **Caractéristiques** : FTP utilise deux connexions TCP — une pour le contrôle et une pour les données. Supporte les commandes pour gérer les fichiers à distance (USER, RETR, STOR).
 
 **Schema: FTP**
-"""
+```
   [Client FTP] --(TCP Port 21)-- [Serveur FTP] --- Système de fichiers distant
                   |                             
                   '--(TCP Port 20)-- Connexion de données
-"""
+```
 
 ### e) Messagerie (SMTP, POP3, IMAP)
 
@@ -135,18 +134,18 @@
   - **Caractéristiques** : Permet de gérer les dossiers de mails, maintient l'état entre sessions.
 
 **Schema: Protocole SMTP**
-"""
+```
   [Agent Utilisateur] --> [Serveur SMTP] --> [Serveur de messagerie destinataire]
-"""
+```
 
 ### f) DNS (Domain Name System)
 - **Fonction** : Conversion des noms de domaine en adresses IP via une base de données distribuée et hiérarchique.
 - **Processus** : Les requêtes DNS sont soit itératives soit récursives.
   
 **Schema: DNS Résolution**
-"""
+```
   [Client] --> [Serveur DNS local] --> [Serveur DNS racine] --> [Serveur DNS de domaine] --> [Adresse IP]
-"""
+```
 
 ---
 
@@ -158,11 +157,11 @@
 - **Leechers** : Peers qui téléchargent des morceaux de fichiers.
 
 **Schema: Modèle P2P avec BitTorrent**
-"""
+```
   [Seeder] --> [Leecher 1] --> [Leecher 2]
               |                  |
             [Leecher 3] <--> [Leecher 4]
-"""
+```
 
 ---
 
