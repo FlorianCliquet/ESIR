@@ -1,0 +1,8 @@
+column,description,source
+iso_code,ISO 3166-1 alpha-3 – three-letter country codes,International Organization for Standardization
+country,Geographic location,Our World in Data
+year,Year of observation,Our World in Data
+co2,"Annual production-based emissions of carbon dioxide (CO2), measured in million tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",Global Carbon Project
+consumption_co2,"Annual consumption-based emissions of carbon dioxide (CO2), measured in million tonnes. Consumption-based emissions are national or regional emissions which have been adjusted for trade (i.e. territorial/production emissions minus emissions embedded in exports, plus emissions embedded in imports). If a country's consumption-based emissions are higher than its production emissions it is a net importer of carbon dioxide. Data has been converted by Our World in Data from million tonnes of carbon to million tonnes of CO2 using a conversion factor of 3.664.",Global Carbon Project
+cumulative_co2,"Cumulative production-based emissions of carbon dioxide (CO2) since the first year of data availability, measured in million tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",Our World in Data based on the Global Carbon Project
+population,"Population by country, available from 1800 to 2021 based on Gapminder data, HYDE, and UN Population Division (2019) estimates.","Gapminder (v6), HYDE (v3.2), UN (2019)"
