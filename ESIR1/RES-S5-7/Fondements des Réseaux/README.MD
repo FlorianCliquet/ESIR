@@ -38,10 +38,10 @@
 
 ### a) Réseau de Bordure
 
-	- **Terminaux** :  Hôtes et serveurs exécutant des applications comme le WWW et email.
-	- ** Réseaux d'accès** :
-		- **DSL** : Utilise les lignes téléphoniques, débit descendant 52 Mb/s.
-		- **FTTH** : FIbre optique jusqu'à 10 Gb/s
+- **Terminaux** :  Hôtes et serveurs exécutant des applications comme le WWW et email.
+- **Réseaux d'accès** :
+	- **DSL** : Utilise les lignes téléphoniques, débit descendant 52 Mb/s.
+	- **FTTH** : FIbre optique jusqu'à 10 Gb/s
 
 ### b) Réseau de Coeur
 	- **Commutation** : Transfert de paquets de données via des routeurs interconnectés.
