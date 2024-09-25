@@ -1,4 +1,4 @@
-# Fondements des Réseaux - Detailed Recap
+# Fondements des Réseaux - Recap
 
 ## Sommaire
 1. [Qu'est-ce qu'Internet?](#1-quest-ce-quinternet)
