@@ -44,8 +44,8 @@
 	- **FTTH** : FIbre optique jusqu'à 10 Gb/s
 
 ### b) Réseau de Coeur
-	- **Commutation** : Transfert de paquets de données via des routeurs interconnectés.
-	- **Routage** : Détermination du chemin entre la source et la destination
+- **Commutation** : Transfert de paquets de données via des routeurs interconnectés.
+- **Routage** : Détermination du chemin entre la source et la destination
 
 ### ASCII Schema : Structure de l'Internet
 
@@ -69,7 +69,7 @@
    [dproc] -> [dqueue] -> [dtrans] -> [dprop]
         |       |            |         |
   Vérif. d'erreur File d'attente Transmission Propagation
-````
+```
 
 - **Débit** : Quantité de données transférées par unité de temps.
 - **Perte de paquets** : Paquets supprimés si la mémoire du routeur est saturée.
