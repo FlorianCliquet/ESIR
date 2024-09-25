@@ -107,18 +107,18 @@
 ```
 
 ### b) Modèle Internet (TCP/IP)
-	1. **Application** : Protocoles réseau (HTTP, FTP).
-	2. **Transport** : Communication entre hôtes (TCP, UDP).
-	3. **Réseau** : Routage des paquets (IP).
-	4. **Liaison** : Communication entre réseaux voisins.
-	5. **Physique** : Transmission des bits.
+1. **Application** : Protocoles réseau (HTTP, FTP).
+2. **Transport** : Communication entre hôtes (TCP, UDP).
+3. **Réseau** : Routage des paquets (IP).
+4. **Liaison** : Communication entre réseaux voisins.
+5. **Physique** : Transmission des bits.
 
 ## 5. Sécurité des Réseaux
 
-	- **Malware** : Virus, vers, spyware qui infectent des hôtes
-	- **Attaques DoS (Denial of Service)** : Inondation de trafic pour rendre des ressources inaccessibles.
-	- **Sniffing** : Capture de paquets sur un réseau (mots de passe, données sensibles).
-	- **Spoofing** : Falsification de l'adresse IP pour imiter une source légitime.
+- **Malware** : Virus, vers, spyware qui infectent des hôtes
+- **Attaques DoS (Denial of Service)** : Inondation de trafic pour rendre des ressources inaccessibles.
+- **Sniffing** : Capture de paquets sur un réseau (mots de passe, données sensibles).
+- **Spoofing** : Falsification de l'adresse IP pour imiter une source légitime.
 ### ASCII Schema : Attaque DoS
 
 ```plaintext
@@ -128,15 +128,14 @@
    |                                             |  
 [Serveur Cible] ------------------------------- Overloaded 
 ```
-	- **Lignes de Défense** :
-		- **Pare-feu** : Filtrage des paquets.
-		- **Cryptage** : Protection des données via des techniques de chiffrement.
-		- **Authentification** : Vérification d'indentité (ex: carte SIM).
+- **Lignes de Défense** :
+	- **Pare-feu** : Filtrage des paquets.
+	- **Cryptage** : Protection des données via des techniques de chiffrement.
+	- **Authentification** : Vérification d'indentité (ex: carte SIM).
 
 ## Questions Importantes
 
-	1. Quelles sont les couches du modèle OSI?
-	2. Expliquez la différence entre la commutation de paquets et la commutation de circuits.
-	3. Quels sont les principaux types d'attaques réseau?
-	4. Comment le délai de propagation est-il calculé?
-
+1. Quelles sont les couches du modèle OSI?
+2. Expliquez la différence entre la commutation de paquets et la commutation de circuits.
+3. Quels sont les principaux types d'attaques réseau?
+4. Comment le délai de propagation est-il calculé?
