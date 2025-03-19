@@ -1,0 +1,6 @@
+Ces tests permettent de tester une partie après l'autre
+
+Pour combiner avec la détection des fuites de mémoire à l'aide de valgrind, il
+faut inhiber les tests des assertions du programme. Il suffit pour cela de
+définir le symbole VALGRIND dans les options de compilation puis de
+recompiler et refaire l'édition de liens
