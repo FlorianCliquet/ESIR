@@ -165,6 +165,7 @@ private:
       }
     }
   }
+  
 
   /// <summary>
   /// Removes the entity from all cells it lies in.
@@ -207,6 +208,8 @@ private:
   ///   <c>true</c> if the specified cell is valid; otherwise, <c>false</c>.
   /// </returns>
   bool isValid(const Vector2<unsigned int> &cell) const;
+
+
 
 public:
   /// <summary>
@@ -332,6 +335,7 @@ public:
     std::copy(result.begin(), result.end(), realResult.begin());
     return realResult;
   }
+
 };
 
 #endif

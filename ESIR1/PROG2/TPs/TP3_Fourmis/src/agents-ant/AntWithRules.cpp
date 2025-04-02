@@ -1,15 +1,5 @@
-/**
- * @file AntWithRules.cpp
- * @author Cliquet Florian (florian.cliquet@etudiant.univ-rennes.fr)
- * @brief
- * @version 0.1
- * @date 2025-03-25
- *
- * @copyright Copyright (c) 2025
- *
- */
-
 #include "agents-ant/AntWithRules.hpp"
+#include "agents-ant/AntBaseCombat.hpp"
 #include "agents-ant/AntBasePheromone.hpp"
 #include "agents-env/Anthill.hpp"
 #include "agents-env/Environment.hpp"
@@ -18,7 +8,9 @@
 #include "rules/OrRule.hpp"
 #include <cmath>
 #include <vector>
+#include "utils/MathUtils.hpp"
 #include "utils/Timer.hpp"
+#include <vector>
 
 // ─── Antwithrules Implementation ─────────────────────────────────────────────
 
@@ -27,39 +19,70 @@ AntWithRules::AntWithRules(Environment *environment, Anthill *anthill)
   initializeRules();
 }
 
-AntWithRules::~AntWithRules() { delete compositeRule; }
+AntWithRules::~AntWithRules() { }
 
 void AntWithRules::initializeRules() {
-  std::vector<AbstractRule *> rules;
-  rules.reserve(6);
+  std::vector<std::unique_ptr<AbstractRule>> rules;
+  rules.reserve(7);
 
-  rules.emplace_back(new RulePickUpFood(this));
-  rules.emplace_back(new RuleMoveTowardFood(this));
-  rules.emplace_back(new RuleFollowPheromone(this));
-  rules.emplace_back(new RuleRandomPathing(this));
-  rules.emplace_back(new RuleDepositFood(this));
-  rules.emplace_back(new RulePathingToAnthill(this));
+  rules.push_back(std::make_unique<RuleCombat>(this));
+  rules.push_back(std::make_unique<RulePickUpFood>(this));
+  rules.push_back(std::make_unique<RuleMoveTowardFood>(this));
+  rules.push_back(std::make_unique<RuleFollowPheromone>(this));
+  rules.push_back(std::make_unique<RuleRandomPathing>(this));
+  rules.push_back(std::make_unique<RuleDepositFood>(this));
+  rules.push_back(std::make_unique<RulePathingToAnthill>(this));
 
-  compositeRule = new OrRule(rules);
+  compositeRule = std::make_unique<OrRule>(std::move(rules));
 }
 
-
 void AntWithRules::update() {
-  /**Deposit pheromones on every move:
-    100 units if carrying food; otherwise 10 units.
-    */
   OrRule::EvaluationContext ctx;
   ctx.PickUpFood = LocalizedEntity::perceive<Food>();
   ctx.ConeFood = LocalizedEntity::perceive<Food>(getDirection(), OPENING_ANGLE,
                                                  MAX_DISTANCE_VIEW_FOOD, MIN_DISTANCE_VIEW_FOOD);
   ctx.pheromone = choosePheromone();
   ctx.close_anthill = ((getPosition() - getAnthill()->getPosition()).norm() <= 2.0f);
-    AntBasePheromone::update();
+
+  recoverStamina();
   if (compositeRule)
-    compositeRule->evaluate(ctx);  
+    compositeRule->evaluate(ctx);
+  AntBasePheromone::update();
 }
 
 // ─── Inner Rule Implementations ──────────────────────────────────────────────
+
+bool AntWithRules::RuleCombat::condition(const EvaluationContext &ctx) {
+  AntBasePheromone *ant = getTarget();
+  if (ant->getEnemy() && ant->getEnemy()->getStatus() != Agent::running && (ant->getPosition() - ant->getEnemy()->getPosition()).norm() > TRIGGER_RADIUS)
+    ant->combatsignal(nullptr);
+  if (ant->getEnemy() == nullptr) {
+    ::std::vector<AntWithRules*> ennemies = ant->LocalizedEntity::perceive<AntWithRules>(ant->getDirection(), ant->OPENING_ANGLE,
+                                                 MAX_DISTANCE_VIEW_FOOD);
+    for (AntWithRules *new_enemy : ennemies){
+      if (new_enemy && new_enemy->getStatus() == Agent::running && new_enemy->getAnthill() != ant->getAnthill()) {
+        ant->combatsignal(new_enemy);
+        break;
+      }
+    }
+  }
+  if (ant->getEnemy() && ant->getEnemy()->getStatus() == Agent::running && ant->getEnemy() != ant) {
+    return true;
+  }
+  return false;
+}
+
+void AntWithRules::RuleCombat::action(const EvaluationContext &ctx) {
+  AntBasePheromone *ant = getTarget();
+  float distance = (ant->getPosition() - ant->getEnemy()->getPosition()).norm();
+  if (distance <= HIT_RADIUS && ant->getStamina() > 0) {
+    ant->getEnemy()->take_damage(ant->getDamage());
+    ant->setStamina(ant->getStamina() - ant->getDamage()*2);
+  }else if(distance <= TRIGGER_RADIUS && ant->getStamina() > 0){
+    ant->orientTowards(ant->getEnemy()->getPosition());
+    ant->move();
+  }
+}
 
 /**
  * @brief If the Ant is not carrying food and is directly on the top of food, pick it up
@@ -102,7 +125,8 @@ void AntWithRules::RuleMoveTowardFood::action(const EvaluationContext &ctx) {
 bool AntWithRules::RuleFollowPheromone::condition(const EvaluationContext &ctx) {
   if (getTarget()->hasFood())
     return false;
-  return(ctx.pheromone != nullptr);
+  // 20% to not follow the pheromone
+  return(ctx.pheromone != nullptr && MathUtils::compute_prob(80));
 }
 
 void AntWithRules::RuleFollowPheromone::action(const EvaluationContext &ctx) {
@@ -131,7 +155,7 @@ void AntWithRules::RuleRandomPathing::action(const EvaluationContext &ctx) {
  *
  */
 bool AntWithRules::RuleDepositFood::condition(const EvaluationContext &ctx) {
-    return(ctx.close_anthill);
+  return(ctx.close_anthill);
 }
 
 void AntWithRules::RuleDepositFood::action(const EvaluationContext &ctx) {

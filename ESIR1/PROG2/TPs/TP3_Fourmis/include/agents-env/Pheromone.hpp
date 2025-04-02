@@ -14,17 +14,26 @@
 #include "agents-ant/Agent.hpp"
 #include "agents-env/Environment.hpp"
 #include "utils/Vector2.hpp"
+#include "agents-env/Anthill.hpp"
 class Pheromone : public Agent {
+public:
+  enum class Type { SAFE, DANGER };
+  static constexpr float DANGER_PHEROMONE_QTY = 400.f;
 protected:
-  constexpr static float EVAPORATION_RATE = 0.01;
+  static constexpr float EVAPORATION_RATE = 0.01;
   float m_quantity;
+  Anthill *m_anthill;
+  Type type;
 
 public:
-  Pheromone(Environment *environment, const Vector2<float> &pos, float quantity);
+  Pheromone(Environment *environment, const Vector2<float> &pos, float quantity, Anthill* m_anthill, Type type=Type::SAFE);
   float getQuantity() const;
   void addQuantity(float q);
+  Anthill* getAnthill() const;
   void update() override;
   void evaporate();
+  Type getType() const { return type; }
+  
 };
 
 #endif

@@ -3,7 +3,7 @@
 #include <functional>
 #include <concepts>
 #include <type_traits>
-#include "Liste.h"
+#include "liste.hpp"
 /**
    3.2.1 chercher une valeur dans une liste triée, nom de la fonction fonction : chercherTri
    @param premier : itérateur positionné sur le premier élément
@@ -31,7 +31,7 @@ IT chercherTri(IT premier, IT dernier, const T& x, Compare comp = Compare{}){
 
 template<typename T>
 Liste<T> *copierTri(const Liste<T>& l){
-   Liste<T>* res = new Liste<T>;
+   Liste<T> *res;
    for(auto it = l.begin(); it != l.end(); ++it)res->insert(chercherTri(res->begin(), res->end(), *it), *it);
    return res;
 }

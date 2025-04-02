@@ -276,19 +276,20 @@
      return last;
  }
  
- template<typename T>
- typename Liste<T>::iterator Liste<T>::insert(iterator pos, const T& value) {
-     Chainon* posNode = pos.m_current;
+ template <typename T>
+ typename Liste<T>::iterator Liste<T>::insert(iterator pos, const T &value) {
+    assert(pos.m_sentinel == m_sentinel);
+    Chainon* posNode = pos.m_current;
      Chainon* newNode = new Chainon(value);
      posNode->insertBefore(newNode);
      m_size++;
      return iterator(newNode, m_sentinel);
  }
- 
- template<typename T>
+
+ template <typename T>
  typename Liste<T>::iterator Liste<T>::erase(iterator pos) {
-     assert(pos != end());
-     Chainon* node = pos.m_current;
+    assert(pos.m_sentinel == m_sentinel && pos.m_current != pos.m_sentinel && !empty());
+    Chainon* node = pos.m_current;
      iterator ret(node->next(), m_sentinel);
      node->detach();
      delete node;

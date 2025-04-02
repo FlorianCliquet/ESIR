@@ -30,9 +30,9 @@ IT chercherTri(IT premier, IT dernier, const T& x, Compare comp = Compare{}){
 */
 
 template<typename T>
-Liste<T> copierTri(const Liste<T>& l){
-   Liste<T> res;
-   for(auto it = l.begin(); it != l.end(); ++it)res.insert(chercherTri(res.begin(), res.end(), *it), *it);
+Liste<T> *copierTri(const Liste<T>& l){
+   Liste<T> *res;
+   for(auto it = l.begin(); it != l.end(); ++it)res->insert(chercherTri(res->begin(), res->end(), *it), *it);
    return res;
 }
 

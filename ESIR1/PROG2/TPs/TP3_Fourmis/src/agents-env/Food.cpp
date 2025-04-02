@@ -1,14 +1,3 @@
-/**
- * @file Food.cpp
- * @author Cliquet Florian (florian.cliquet@etudiant.univ-rennes.fr)
- * @brief
- * @version 0.1
- * @date 2025-03-21
- *
- * @copyright Copyright (c) 2025
- *
- */
-
 #include "agents-env/Food.hpp"
 #include "renderer/Renderer.hpp"
 Food::Food(Environment *environment, const Vector2<float> &pos, float quantity)

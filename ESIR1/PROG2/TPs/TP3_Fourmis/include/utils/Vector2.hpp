@@ -68,8 +68,15 @@ public:
   /// </summary>
   /// <param name="v">The scalar.</param>
   /// <returns></returns>
+
+  // SUBOPTIMAL IMPLEMENTATION
+  // Vector2 operator/(const Scalar &v) const {
+  //   return Vector2(m_coordinates[0] / v, m_coordinates[1] / v);
+  // }
+
   Vector2 operator/(const Scalar &v) const {
-    return Vector2(m_coordinates[0] / v, m_coordinates[1] / v);
+    Scalar inv = Scalar(1) / v; // Compute reciprocal once
+    return (*this) * inv;
   }
 
   /// <summary>

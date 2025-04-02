@@ -1,14 +1,3 @@
-/**
- * @file AntWithRules.hpp
- * @author Cliquet Florian (florian.cliquet@etudiant.univ-rennes.fr)
- * @brief
- * @version 0.1
- * @date 2025-03-25
- *
- * @copyright Copyright (c) 2025
- *
- */
-
 #ifndef ANTWITHRULES_H
 #define ANTWITHRULES_H
 
@@ -23,14 +12,10 @@ public:
   void update() override;
   ~AntWithRules() override;
 private:
-  OrRule *compositeRule; /**grouping all the ant's behaviour rules */
+  std::unique_ptr<OrRule> compositeRule; /**regroupement des différentes règles qui s'applique aux fourmis*/
   void initializeRules();
 
   // ─── Inner Rule Classes ──────────────────────────────────────────────────────
-  /**
-   * @brief Echa rule inherits from AbstractAntRule which keeps a pointer to the ant
-   *
-   */
   class RulePickUpFood : public AbstractAntRule {
   public:
     RulePickUpFood(AntWithRules *ant) : AbstractAntRule(ant) {}
@@ -65,6 +50,12 @@ private:
   class RulePathingToAnthill : public AbstractAntRule {
   public:
     RulePathingToAnthill(AntWithRules *ant) : AbstractAntRule(ant) {}
+    virtual bool condition(const EvaluationContext &ctx) override;
+    virtual void action(const EvaluationContext &ctx) override;
+  };
+  class RuleCombat : public AbstractAntRule {
+  public:
+    RuleCombat(AntWithRules *ant) : AbstractAntRule(ant) {}
     virtual bool condition(const EvaluationContext &ctx) override;
     virtual void action(const EvaluationContext &ctx) override;
   };

@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <numeric>
+#include <random>
 #include <vector>
 
 /// <summary>
@@ -76,6 +77,18 @@ inline unsigned int randomChoose(const std::vector<float> &weights) {
     --index;
   }
   return index;
+}
+
+inline bool compute_prob(const int proba) {
+  assert(proba >= 0 && proba <= 100);
+  static std::random_device rd;
+  static std::mt19937 gen(rd());
+
+  std::uniform_int_distribution<> dis(0, 99);
+
+  int rdval = dis(gen);
+
+  return rdval < proba;
 }
 }; // namespace MathUtils
 

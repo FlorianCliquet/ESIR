@@ -7,7 +7,6 @@
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <iostream>
 #include <time.h>
-#include "agents-ant/AntWithRules.hpp"
 static unsigned int windowWidth() { return 1024; }
 static unsigned int windowHeight() { return 700; }
 
@@ -38,9 +37,7 @@ void onKeyPressed(char key, Environment *environment) {
     }
   } else if (key == 'a') {
     Vector2<float> position = environment->randomPosition();
-    Anthill *anthill = new Anthill(environment, position);
-    for (int i = 0; i < 50; i++)
-      new AntWithRules(environment, anthill);
+    new Anthill(environment, position);
   }
 }
 
@@ -73,6 +70,7 @@ int main(int /*argc*/, char ** /*argv*/) {
   // The main event loop...
   SDL_Event event;
   bool exit = false;
+  
   while (!exit) {
     // 1 - We handle events
     while (SDL_PollEvent(&event)) {

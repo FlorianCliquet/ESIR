@@ -1,14 +1,3 @@
-/**
- * @file AbstractRule.hpp
- * @author Cliquet Florian (florian.cliquet@etudiant.univ-rennes.fr)
- * @brief
- * @version 0.1
- * @date 2025-03-25
- *
- * @copyright Copyright (c) 2025
- *
- */
-
 #ifndef ABSTRACTRULE_H
 #define ABSTRACTRULE_H
 #include "agents-env/Food.hpp"
